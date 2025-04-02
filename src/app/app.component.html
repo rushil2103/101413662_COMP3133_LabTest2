@@ -1,0 +1,26 @@
+<mat-toolbar class="custom-toolbar">
+  <span>SpaceX Mission Tracker</span>
+</mat-toolbar>
+
+<div class="custom-container">
+  <router-outlet></router-outlet>
+</div>
+
+<style>
+  .custom-toolbar {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-container {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  }
+</style>

@@ -1,0 +1,28 @@
+<!-- src/app/components/missionlist/missionlist.component.html -->
+
+<mat-toolbar color="primary">
+    <span>SpaceX Launch Missions</span>
+  </mat-toolbar>
+  
+  <div style="margin: 20px;">
+    <!-- Embed Mission Filter Component -->
+    <app-missionfilter (filterByYear)="applyFilter($event)"></app-missionfilter>
+  
+    <div *ngFor="let mission of launches" style="margin-bottom: 20px;">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ mission.mission_name }} (Flight #{{ mission.flight_number }})</mat-card-title>
+          <mat-card-subtitle>Launched in {{ mission.launch_year }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="mission.links.mission_patch_small" alt="Mission patch">
+        <mat-card-content>
+          <p>{{ mission.details }}</p>
+          <p><strong>Rocket:</strong> {{ mission.rocket.rocket_name }} - {{ mission.rocket.rocket_type }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="viewDetails(mission.flight_number)">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  

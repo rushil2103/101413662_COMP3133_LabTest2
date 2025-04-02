@@ -1,0 +1,133 @@
+.mission-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background: linear-gradient(to bottom right, #1e1e2f, #2a2a40);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333;
+}
+
+.mission-header-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a3a55;
+  border: 2px solid #555;
+}
+
+mat-card-content {
+  flex-grow: 1;
+  padding: 1.2rem 0;
+}
+
+.status-chips {
+  margin: 1.2rem 0;
+}
+
+mat-chip-set {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+mat-chip {
+  min-height: 36px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-radius: 20px;
+}
+
+mat-chip.success {
+  background-color: #00c853 !important;
+  color: #fff !important;
+}
+
+mat-chip.failure {
+  background-color: #d32f2f !important;
+  color: #fff !important;
+}
+
+.rocket-info {
+  margin-top: 1.2rem;
+  color: #b0bec5;
+}
+
+mat-card-actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mission-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.flight-number {
+  color: #82b1ff;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+mat-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+mat-card-subtitle {
+  color: #82b1ff;
+}
+
+.rocket-info,
+.mission-details {
+  margin: 20px 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rocket-info h3,
+.mission-details h3 {
+  color: #ffcc80;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.details-text {
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.quick-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: flex-start;
+}
+
+.quick-links a {
+  color: #4fc3f7;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.quick-links a:hover {
+  color: #29b6f6;
+}
+
+@media (max-width: 600px) {
+  .mission-card {
+    margin: 10px;
+  }
+
+  mat-card-title {
+    font-size: 1.1rem;
+  }
+}

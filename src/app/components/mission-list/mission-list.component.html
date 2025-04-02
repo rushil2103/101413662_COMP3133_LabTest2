@@ -1,0 +1,68 @@
+<div class="mission-list-container">
+  <mat-card class="filters-card">
+    <mat-card-header>
+      <mat-card-title>Filter Missions</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="filters-grid">
+        <!-- Year Filter -->
+        <mat-form-field appearance="outline">
+          <mat-label>Launch Year</mat-label>
+          <mat-select [(ngModel)]="selectedYear" (selectionChange)="applyFilters()">
+            <mat-option value="">All Years</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">
+              {{year}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Launch Success Filter -->
+        <mat-form-field appearance="outline">
+          <mat-label>Launch Status</mat-label>
+          <mat-select [(ngModel)]="launchSuccess" (selectionChange)="applyFilters()">
+            <mat-option [value]="null">All</mat-option>
+            <mat-option [value]="true">Successful</mat-option>
+            <mat-option [value]="false">Failed</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Landing Success Filter -->
+        <mat-form-field appearance="outline">
+          <mat-label>Landing Status</mat-label>
+          <mat-select [(ngModel)]="landingSuccess" (selectionChange)="applyFilters()">
+            <mat-option [value]="null">All</mat-option>
+            <mat-option [value]="true">Successful</mat-option>
+            <mat-option [value]="false">Failed</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Reset Button -->
+        <button mat-raised-button color="accent" (click)="resetFilters()">
+          Reset Filters
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <!-- Missions Grid -->
+  <div class="missions-grid" *ngIf="!loading">
+    <app-mission-card
+      *ngFor="let mission of filteredMissions"
+      [mission]="mission"
+    ></app-mission-card>
+
+    <!-- No Results Message -->
+    <div class="no-results" *ngIf="filteredMissions.length === 0">
+      <mat-card>
+        <mat-card-content>
+          <p>No missions found matching the selected filters.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div> 

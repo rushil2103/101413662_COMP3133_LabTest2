@@ -1,0 +1,70 @@
+.mission-list-container {
+  padding: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom right, #1e1f2f, #2c2d3f);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.filters-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  color: #90caf9;
+  font-size: 1.2rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  color: #ffccbc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mission-list-container {
+    padding: 1rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-card {
+    padding: 1rem;
+  }
+}

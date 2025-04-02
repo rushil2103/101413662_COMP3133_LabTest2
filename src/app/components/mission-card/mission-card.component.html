@@ -1,0 +1,33 @@
+<mat-card class="mission-card">
+  <mat-card-header>
+    <div mat-card-avatar class="mission-header-image">
+      <img [src]="mission.links.mission_patch_small" [alt]="mission.mission_name">
+    </div>
+    <mat-card-title>{{mission.mission_name}}</mat-card-title>
+    <mat-card-subtitle>{{mission.launch_year}}</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <div class="status-chips">
+      <mat-chip-set>
+        <mat-chip [class.success]="mission.launch_success" [class.failure]="!mission.launch_success">
+          Launch: {{mission.launch_success ? 'Success' : 'Failed'}}
+        </mat-chip>
+        <mat-chip [class.success]="mission.rocket.first_stage.cores[0]?.land_success" 
+                 [class.failure]="!mission.rocket.first_stage.cores[0]?.land_success">
+          Landing: {{mission.rocket.first_stage.cores[0]?.land_success ? 'Success' : 'Failed'}}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+
+    <p class="rocket-info">
+      Rocket: {{mission.rocket.rocket_name}}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="openDetails()">
+      View Details
+    </button>
+  </mat-card-actions>
+</mat-card> 

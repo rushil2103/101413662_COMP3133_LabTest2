@@ -1,0 +1,172 @@
+.mission-details-dialog {
+  padding: 2rem;
+  background-color: #1f1f2e;
+  color: #e0e0e0;
+  border-radius: 12px;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.mission-patch {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 2px solid #444;
+  background-color: #2a2a3d;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 1.6rem;
+  color: #f5f5f5;
+}
+
+.close-button {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background-color: #ff5c5c;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.info-section {
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: #90caf9;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.label {
+  color: #b0bec5;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.status-section {
+  margin: 2rem 0;
+}
+
+mat-chip.success {
+  background-color: #00e676 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+mat-chip.failure {
+  background-color: #ef5350 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.details-section {
+  margin-bottom: 2.5rem;
+}
+
+.details-section p {
+  line-height: 1.8;
+  color: #cfd8dc;
+  font-size: 0.95rem;
+}
+
+.links-section {
+  border-top: 1px solid #444;
+  padding-top: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #3949ab;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5c6bc0;
+}
+
+.material-icons {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .mission-details-dialog {
+    padding: 1rem;
+  }
+
+  .dialog-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-patch {
+    width: 70px;
+    height: 70px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
